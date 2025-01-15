@@ -1,0 +1,41 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account: one
+  transaction_date: 2025-01-10
+  post_date: 2025-01-11
+  description: Potatoes
+  amount: 299
+  verified: true
+
+two:
+  account: one
+  transaction_date: 2025-01-11
+  post_date: 2025-01-12
+  description: Tomatoes
+  amount: 345
+  verified: false
+
+three:
+  account: one
+  transaction_date: 2025-01-11
+  post_date: 2025-01-12
+  description: Cheese
+  amount: 675
+  verified: false
+
+four:
+  account: two
+  transaction_date: 2025-01-11
+  post_date: 2025-01-11
+  description: Cereals
+  amount: 485
+  verified: false
+
+five:
+  account: two
+  transaction_date: 2025-01-12
+  post_date: 2025-01-12
+  description: Chicken breasts
+  amount: 375
+  verified: false

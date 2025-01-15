@@ -1,0 +1,22 @@
+<%= form_with(model: movement, class: "contents") do |form| %>
+  <% if movement.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(movement.errors.count, "error") %> prohibited this movement from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% movement.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5 flex items-center space-x-3">
+    <%= form.label :verified %>
+    <%= form.checkbox :verified, class: ["shadow rounded-md border outline-none mt-2 h-5 w-5", {"border-gray-400 focus:outline-blue-600": movement.errors[:verified].none?, "border-red-400 focus:outline-red-600": movement.errors[:verified].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

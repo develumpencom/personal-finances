@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_12_193321) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_12_194947) do
   create_table "accounts", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "movements", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.date "transaction_date", null: false
+    t.date "post_date", null: false
+    t.string "description", null: false
+    t.integer "amount", null: false
+    t.boolean "verified", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_movements_on_account_id"
+  end
+
+  add_foreign_key "movements", "accounts"
 end

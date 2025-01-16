@@ -3,4 +3,13 @@
     <strong class="block font-medium mb-1">Name:</strong>
     <%= account.name %>
   </p>
+
+  <% if action_name == "show" %>
+    <% Account::SETTINGS_FIELDS.each do |field| %>
+      <p class="my-5">
+        <strong class="block font-medium mb-1"><%= field.to_s.humanize %>:</strong>
+        <%= account.send(field) %>
+      </p>
+    <% end %>
+  <% end %>
 </div>

@@ -12,12 +12,13 @@
 
   <div id="accounts" class="min-w-full">
     <% if @accounts.any? %>
-      <% @accounts.each do |account| %>
-        <%= render account %>
-        <p>
-          <%= link_to "Show this account", account, class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-        </p>
-      <% end %>
+      <ul>
+        <% @accounts.each do |account| %>
+          <li class="my-5">
+            <%= link_to account.name, account %>
+          </li>
+        <% end %>
+      </ul>
     <% else %>
       <p class="text-center my-10">No accounts found.</p>
     <% end %>

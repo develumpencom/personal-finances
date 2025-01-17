@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class MovementsTest < ApplicationSystemTestCase
   setup do
-    @account = accounts(:one)
+    @account = accounts(:checking)
     @movement = movements(:one)
   end
 

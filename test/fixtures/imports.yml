@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-checking:
-  name: Checking
+one:
+  account: checking
 
-savings:
-  name: Savings
+two:
+  account: savings

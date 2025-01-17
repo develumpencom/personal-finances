@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  account: one
+  account: checking
   transaction_date: 2025-01-10
   post_date: 2025-01-11
   description: Potatoes
@@ -9,7 +9,7 @@ one:
   verified: true
 
 two:
-  account: one
+  account: checking
   transaction_date: 2025-01-11
   post_date: 2025-01-12
   description: Tomatoes
@@ -17,7 +17,7 @@ two:
   verified: false
 
 three:
-  account: one
+  account: checking
   transaction_date: 2025-01-11
   post_date: 2025-01-12
   description: Cheese
@@ -25,7 +25,7 @@ three:
   verified: false
 
 four:
-  account: two
+  account: savings
   transaction_date: 2025-01-11
   post_date: 2025-01-11
   description: Cereals
@@ -33,7 +33,7 @@ four:
   verified: false
 
 five:
-  account: two
+  account: savings
   transaction_date: 2025-01-12
   post_date: 2025-01-12
   description: Chicken breasts

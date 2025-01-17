@@ -2,7 +2,7 @@ require "test_helper"
 
 class AccountTest < ActiveSupport::TestCase
   setup do
-    @account = accounts(:one)
+    @account = accounts(:checking)
   end
 
   test "is valid" do

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :accounts do
+    resource :imports, only: [ :new, :create ]
     resources :movements, shallow: true, only: %i[ index show edit update destroy ]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

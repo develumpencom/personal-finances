@@ -2,7 +2,7 @@ require "test_helper"
 
 class MovementsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @account = accounts(:one)
+    @account = accounts(:checking)
     @movement = movements(:one)
   end
 

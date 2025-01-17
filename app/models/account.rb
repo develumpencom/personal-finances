@@ -1,4 +1,5 @@
 class Account < ApplicationRecord
+  has_many :imports, dependent: :destroy
   has_many :movements, dependent: :destroy
 
   SETTINGS_FIELDS = [ :transaction_date_column,

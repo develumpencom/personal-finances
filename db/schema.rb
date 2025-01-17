@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_16_001317) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_16_002005) do
   create_table "accounts", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -46,6 +46,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_16_001317) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "imports", force: :cascade do |t|
+    t.integer "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_imports_on_account_id"
+  end
+
   create_table "movements", force: :cascade do |t|
     t.integer "account_id", null: false
     t.date "transaction_date", null: false
@@ -60,5 +67,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_16_001317) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "imports", "accounts"
   add_foreign_key "movements", "accounts"
 end

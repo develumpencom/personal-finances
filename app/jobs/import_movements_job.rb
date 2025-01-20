@@ -26,7 +26,7 @@ class ImportMovementsJob < ApplicationJob
         values[key] = Date.strptime(values[key], value)
       end
 
-      import.account.movements.find_or_create_by(values)
+      import.account.movements.create_with(import_id:).find_or_create_by(values)
     end
   end
 end

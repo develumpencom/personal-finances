@@ -1,0 +1,5 @@
+class MovementBelongsToImport < ActiveRecord::Migration[8.0]
+  def change
+    add_column :movements, :import_id, :bigint
+  end
+end

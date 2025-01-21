@@ -18,7 +18,11 @@ class ImportMovementsJob < ApplicationJob
 
     CSV.parse(import.file.download, headers: true).each do |row|
       values = column_names.reduce({}) do |acc, curr|
-        acc[curr[0]] = row[curr[1]]
+        if curr[0] == "amount"
+          acc[curr[0]] = Money.from_amount(row[curr[1]].to_f).cents
+        else
+          acc[curr[0]] = row[curr[1]]
+        end
         acc
       end
 

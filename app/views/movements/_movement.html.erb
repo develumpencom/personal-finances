@@ -13,7 +13,7 @@
   </p>
   <p class="my-5">
     <strong class="font-medium mb-1">Amount:</strong>
-    <%= movement.amount %>
+    <%= Money.from_cents(movement.amount, :usd).format %>
   </p>
   <p class="my-5">
     <strong class="font-medium mb-1">Verified:</strong>

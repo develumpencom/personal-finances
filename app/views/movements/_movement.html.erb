@@ -8,10 +8,6 @@
     <%= movement.post_date %>
   </p>
   <p class="my-5">
-    <strong class="font-medium mb-1">Description:</strong>
-    <%= movement.description %>
-  </p>
-  <p class="my-5">
     <strong class="font-medium mb-1">Amount:</strong>
     <%= Money.from_cents(movement.amount, :usd).format %>
   </p>
@@ -20,7 +16,7 @@
     <%= movement.verified %>
   </p>
   <p class="my-5">
-    <strong class="font-medium mb-1">Import:</strong>
+    <strong class="font-medium mb-1">From import:</strong>
     <%= movement.import.created_at %>
   </p>
 </div>

@@ -5,20 +5,22 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
   <% end %>
 
-  <div class="flex justify-between items-center">
+  <div class="mb-10 flex justify-between items-center">
     <h1 class="font-bold text-4xl">Accounts</h1>
     <%= link_to "New account", new_account_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
   </div>
 
-  <div id="accounts" class="min-w-full">
+  <div id="accounts" class="min-w-full grid grid-cols-1 gap-4 sm:grid-cols-2">
     <% if @accounts.any? %>
-      <ul>
-        <% @accounts.each do |account| %>
-          <li class="my-5">
-            <%= link_to account.name, account %>
-          </li>
-        <% end %>
-      </ul>
+      <% @accounts.each do |account| %>
+        <div class="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400">
+          <%= link_to account, class: "focus:outline-none" do %>
+            <span class="absolute inset-0" aria-hidden="true"></span>
+            <p class="text-sm font-medium text-gray-900"><%= account.name %></p>
+            <p class="truncate text-sm text-gray-500">Amount to date</p>
+          <% end %>
+        </div>
+      <% end %>
     <% else %>
       <p class="text-center my-10">No accounts found.</p>
     <% end %>

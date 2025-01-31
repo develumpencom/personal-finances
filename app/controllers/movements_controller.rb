@@ -30,14 +30,14 @@ class MovementsController < ApplicationController
       account_id = params[:account_id]
 
       if account_id
-        @account = Account.find(account_id)
+        @account = Current.user.accounts.find(account_id)
       else
         @account = @movement.account
       end
     end
 
     def set_movement
-      @movement = Movement.find(params.expect(:id))
+      @movement = Current.user.movements.find(params.expect(:id))
     end
 
     def movement_params

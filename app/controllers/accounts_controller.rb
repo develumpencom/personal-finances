@@ -2,21 +2,21 @@ class AccountsController < ApplicationController
   before_action :set_account, only: %i[ show edit update destroy ]
 
   def index
-    @accounts = Account.all
+    @accounts = Current.user.accounts
   end
 
   def show
   end
 
   def new
-    @account = Account.new
+    @account = Current.user.accounts.new
   end
 
   def edit
   end
 
   def create
-    @account = Account.new(account_params)
+    @account = Current.user.accounts.new(account_params)
 
     if @account.save
       redirect_to @account, notice: "Account was successfully created."
@@ -40,7 +40,7 @@ class AccountsController < ApplicationController
 
   private
     def set_account
-      @account = Account.find(params.expect(:id))
+      @account = Current.user.accounts.find(params.expect(:id))
     end
 
     def account_params

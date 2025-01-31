@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Users::Engine => "/"
+
   resources :accounts do
     resource :imports, only: [ :new, :create ]
     resources :movements, shallow: true, only: %i[ index show edit update destroy ]

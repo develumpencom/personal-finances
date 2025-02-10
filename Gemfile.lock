@@ -1,9 +1,11 @@
 GIT
   remote: https://github.com/develumpencom/users
-  revision: 79cdd56a7036ad4f6e8119f7247245eabb3b79fa
+  revision: a212b4669e5069d8efbe9ee12ac2bece772761f4
   specs:
     users (0.1.0)
       bcrypt
+      faraday (~> 2.12)
+      jwt (~> 2.10)
       rails (>= 8.0.1)
 
 GEM
@@ -113,6 +115,12 @@ GEM
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
+    faraday (2.12.2)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.0)
+      net-http (>= 0.5.0)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -130,6 +138,8 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.9.1)
+    jwt (2.10.1)
+      base64
     language_server-protocol (3.17.0.3)
     logger (1.6.5)
     loofah (2.24.0)
@@ -154,14 +164,16 @@ GEM
       money (~> 6.13)
       railties (>= 3.0)
     msgpack (1.7.5)
-    net-imap (0.5.5)
+    net-http (0.6.0)
+      uri
+    net-imap (0.5.6)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.5.0)
+    net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
     nokogiri (1.18.2-aarch64-linux-gnu)
@@ -200,7 +212,7 @@ GEM
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.8)
+    rack (3.1.9)
     rack-session (2.1.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -239,7 +251,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.11.0)
+    rdoc (6.12.0)
       psych (>= 4.0.0)
     regexp_parser (2.10.0)
     reline (0.6.0)
